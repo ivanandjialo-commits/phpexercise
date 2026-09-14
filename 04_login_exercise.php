@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     if($user &&password_verify($password, $user->password)){
         $_SESSION['authenticated']=true;
         $_SESSION['email'] =$user ->email;
-        header('Location:index.php');
+        header('Location:todolist.php');
         exit;
     }else{
         echo"Invaild email or password";
@@ -56,11 +56,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
                     <form method="POST" action="">
                         <div class="mb-3">
                             <label>Email:</label>
-                            <input type="email" name="email" class="form-control" required><br>
-                        </div>
-                        <div class="mb-3">
-                            <label>Email:</label>
-                            <input type="email" name="email" class="form-control" required><br>
+                            <input type="email" name="email" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label>Password:</label>
@@ -69,13 +65,12 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
                         <button type="submit" class="btn btn-primary w-100">Login</button>
                     </form>
                 </div>
+                <div class="d-flex justify-content-between mt-2">
+                    <a href="index.php" class="btn btn-outline-primary">Back</a>
+                    <a href="03_signup_exercise.php">Haven't account?Please Sign Up</a>
+                </div>
             </div>
         </div>
     </div>
-    <br>
-    <div class="text-center">
-        <a href="index.php" class="btn btn-outline-primary">Back</a>
-    </div>
-
 </body>
 </html>
